@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 01</title>
+</head>
+<body>
+
+    <!-- EXERCICIO 01 -->
+
+    <div>
+        <h2>Quem é maior</h2>
+        <div class="numero">
+            <label >numero 1:</label>
+            <input type="number" id="NUB1" placeholder="1° numero">
+            <label for="">numero 2:</label>
+            <input type="number" id="NUB2" placeholder="2° numero">
+            <input type="submit" value="enviar" onclick="enviar()">
+            <div id="resultado"></div>
+        </div>
+        <script>
+            function enviar(){
+            let resu1 = parseInt(document.getElementById('NUB1').value);
+            let resu2 = parseInt(document.getElementById('NUB2').value);
+            let resultado = document.getElementById('resultado');
+           
+            if (resu1 >= resu2){
+                resultado.innerHTML = (`${resu1} é o maior valor`);
+            }else{
+                resultado.innerHTML = (`${resu2} é o maior valor`);
+            
+            }
+        }
+
+        </script>
+    </div> <br>
+
+
+    <!-- EXERCICIO 02 -->
+
+        <div><br>
+            <h2>Negativo OU Positivo</h2>
+            <label for="">Digite um valor</label> 
+            <input type="number" id="num1" placeholder="Digite">
+            <input type="submit" value="Continuar" onclick="Enviar()">
+            <div id="result"></div>
+        <script>
+            function Enviar(){
+            let valor1 = document.getElementById('num1').value;
+            let result = document.getElementById('result');
+
+            if ( valor1 >= 0  ){
+                result.innerHTML=(`${valor1} o numero é positivo`)
+            }else if( valor1 < 0){
+                result.innerHTML =(`${valor1} o numero é negativo`)
+            }
+        }
+
+        </script>
+    </div>
+
+<!-- EXERCICIO 03 -->
+
+    <div><br><br>
+        <h2>Gênero</h2>
+        <label for=""></label>
+        <input type="text" id="genero" placeholder="Digite">
+        <input type="submit" name="" id="" value="enviar" onclick="zato()" >
+        <div id="S1"></div>
+
+        <script>
+            function zato(){
+                let se1 = document.getElementById('genero').value;
+                let S1 = document.getElementById('S1');
+
+                if (se1 == "f" || se1 == "F" ){
+                    S1.innerHTML=(`Gênero Feminino`);
+                }
+                else if (se1 == "m" || se1 == "M"){
+                    S1.innerHTML =(`Gênero Masculino`);
+                }
+                else{
+                    S1.innerHTML = (`Gênero inválido`);
+                }
+            }
+        </script>
+    </div><br>
+
+    <!-- EXERCICIO 04 -->
+
+    <div>
+        <h2>Boletim</h2>
+
+        <input type="text" id="nota1" class="Nota" placeholder="NOTA 1">
+        <input type="text" id="nota2" class="Nota" placeholder="NOTA 2">
+        <input type="text" id="nota3" class="Nota" placeholder="NOTA 3">
+        <input type="submit" value="enviar" onclick="enviarnota()">
+        <div id="media"></div>
+
+        <script>
+            function enviarnota(){
+            let nota1= parseInt(document.getElementById('nota1').value);
+            let nota2= parseInt(document.getElementById('nota2').value);
+            let nota3= parseInt(document.getElementById('nota3').value);
+            let resumo = ((nota1 + nota2 + nota3) / 3)
+            let media = document.getElementById('media')
+
+            if( resumo == 10 ){
+                media.innerHTML=(`${resumo} Aprovado com distinção!`)
+            }else if( resumo >= 7){
+                media.innerHTML=(`${resumo} Aprovado!`)
+            }else if(resumo < 7){
+                media.innerHTML=(`${resumo} Reprovado!`)
+            }
+
+            }
+        </script>
+    </div>
+
+    <!-- EXERCICIO 05 -->
+
+    <div>
+        <h2>Identificador de letras</h2>
+        <input type="text" id="letras" placeholder="Digite uma letra">
+        <input type="submit" value="Identificar" onclick="Scan()">
+        <div id="letra"></div>
+
+        <script>
+            function Scan(){
+            let letral = document.getElementById('letras').value;
+            let letra = document.getElementById('letra');
+
+            if( letral == "a" || letral == "e" ||letral == "i" || letral == "o" ||letral == "u"){
+                letra.innerHTML=(`${letral} é uma vogal`);
+            }
+            else{
+                letra.innerHTML=(`${letral} é uma consoante`);
+            }
+           
+            
+        }
+        </script>
+    </div>
+
+    <!-- EXERCICIO 06 -->
+
+    <H2>Maior e Menor</H2><br>
+    <div><br>
+        <input type="text" id="number1"  placeholder="numero">
+        <input type="text" id="number2"  placeholder="numero">
+        <input type="text" id="number3"  placeholder="numero">
+        <input type="submit" value="enviar" onclick="enviarN()">
+        <div id="total"></div>
+        <div id="total1"></div>
+
+        <script>
+            function enviarN(){
+
+                let nu1= parseInt(document.getElementById('number1').value);
+                let nu2= parseInt(document.getElementById('number2').value);
+                let nu3= parseInt(document.getElementById('number3').value);
+                let total = document.getElementById('total');
+                console.log("test")
+                 
+                if( nu1 > nu2 && nu1 > nu3 ){
+                    total.innerHTML=(`${nu1} é o maior número `);
+                }
+                
+                else if(nu2 > nu3 && nu2 > nu1){
+                    total.innerHTML=(`${nu2} é o maior número `);
+                }
+               
+                else if(nu3 > nu1 && nu3 > nu2){
+                    total.innerHTML=(`${nu3} é o maior número `);
+                }else{}
+
+                if (nu1 < nu2 && nu1 < nu3){
+                    total1.innerHTML=(`${nu1} é o menor numero`);
+                }
+
+                else if (nu2 < nu1 && nu2 < nu3){
+                    total1.innerHTML=(`${nu2} é o menor numero`);
+                }
+
+                else if (nu3 < nu1 && nu3 < nu2){
+                    total1.innerHTML=(`${nu3} é o menor numero`);
+                }else{}
+            }
+        </script>
+
+    </div><br><br>
+
+    <!-- EXERCICIO 07 -->
+
+    <div>
+        <h2>Turno</h2>
+        <label for=""></label>
+        <input type="text" id="horario" placeholder="Turno">
+        <input type="submit" name="" id="" value="enviar" onclick="enviarZ()" >
+        <div id="Turno"></div>
+
+        <script>
+            function enviarZ(){
+                let hora = document.getElementById('horario').value;
+                let Turno = document.getElementById('Turno');
+
+                if (hora == "m" || hora == "M" ){
+                     alert(`Bom Dia!`);
+                }
+                else if (hora == "v" || hora == "V"){
+                     alert(`Boa Tarde!`);
+                }
+                else if(hora == "n" || hora == "N" ){
+                    alert(`Boa Noite!`);
+                }else{
+                     alert(`Valor Inválido`);
+                }
+            }
+        </script>
+
+    </div><br><br>
+
+    <!-- EXERCICIO 08 -->
+
+    <div>
+        <h2>Compras</h2>
+        <label for="">Abacaxi</label>
+        <input type="text" id="Valor1" placeholder="Preço">
+        <label for="">Laranja</label>
+        <input type="text" id="Valor2" placeholder="Preço">
+        <label for="">Banana</label>
+        <input type="text" id="Valor3" placeholder="Preço">
+
+        <input type="submit" value="enviar" onclick="prec1()">
+        <div id="resulta"></div>
+        <script>
+            function prec1(){
+                
+                let preco1 = parseInt(document.getElementById('Valor1').value);
+                let preco2 = parseInt(document.getElementById('Valor2').value);
+                let preco3 = parseInt(document.getElementById('Valor3').value);
+
+                // let abacaxi = preco1
+                // let laranjas = preco2
+                // let banana = preco3
+
+                let resulta =(document.getElementById('resulta'));
+
+                if( preco1 < preco2 && preco1 < preco3){
+                    resulta.innerHTML=(`Abacaxi tem o menor valor ${preco1} reais.`);
+
+                }else if( preco2 < preco1 && preco2 < preco3){
+                    resulta.innerHTML=(`Laranja tem o menor valor ${preco2} reais.`);
+
+                }else if( preco3 < preco1 && preco3 < preco2){
+                    resulta.innerHTML=(`Banana tem o menor valor ${preco3} reais.`);
+                }else{}
+            }
+        </script>
+    </div><br>
+
+    <!-- EXERCICIO 09 -->
+
+    <div>
+        <h2>Nota parcial</h2>
+        <label for="">Nota 1</label>
+        <input type="text" id="notaP1" placeholder="nota">
+        <label for="">Nota 2</label>
+        <input type="text" id="notaP2" placeholder="nota">
+
+        <input type="submit" value="Enviar" onclick="Nota()">
+
+        <div id="TotalParci"></div>
+
+        <script>
+            function Nota(){
+                let parci1= parseFloat(document.getElementById('notaP1').value);
+                let parci2= parseFloat(document.getElementById('notaP2').value);
+                let parcialTotal=((parci1 + parci2)/2);
+                
+                if(parcialTotal >= 9){
+                    TotalParci.innerHTML=(`${parci1}, ${parci2}, media ${parcialTotal}-A Aprovado!`);
+                }else if(parcialTotal >= 7.5 && parcialTotal <= 8.9 ){
+                    TotalParci.innerHTML=(`${parci1}, ${parci2}, media ${parcialTotal}-B Aprovado!`);
+                }else if(parcialTotal >= 6 && parcialTotal <= 7.4 ){
+                    TotalParci.innerHTML=(`${parci1}, ${parci2}, media ${parcialTotal}-C Aprovado!`);
+                }else if(parcialTotal >= 4 && parcialTotal <= 5.9 ){
+                    TotalParci.innerHTML=(`${parci1}, ${parci2}, media ${parcialTotal}-D Reprovado!`);
+                }else if(parcialTotal >= 3.9 && parcialTotal <= 0 ){
+                    TotalParci.innerHTML=(`${parci1}, ${parci2},  media ${parcialTotal}-E Reprovado!`);
+                }else{}
+
+
+            }
+            
+
+        </script>
+
+    </div>
+
+</body>
+</html>
